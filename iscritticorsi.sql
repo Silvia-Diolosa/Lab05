@@ -10,13 +10,13 @@
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
--- Dump della struttura del database iscritticorsi
-CREATE DATABASE IF NOT EXISTS `iscritticorsi` /*!40100 DEFAULT CHARACTER SET utf8 */;
-USE `iscritticorsi`;
+-- Dump della struttura del database iscritticorsi_lab5
+CREATE DATABASE IF NOT EXISTS `iscritticorsi_lab5` /*!40100 DEFAULT CHARACTER SET utf8 */;
+USE `iscritticorsi_lab5`;
 
 -- SET SQL_SAFE_UPDATES = 0
 
--- Dump della struttura di tabella iscritticorsi.corso
+-- Dump della struttura di tabella iscritticorsi_lab5.corso
 CREATE TABLE IF NOT EXISTS `corso` (
   `codins` varchar(50) NOT NULL,
   `crediti` int(11) NOT NULL,
@@ -25,7 +25,7 @@ CREATE TABLE IF NOT EXISTS `corso` (
   PRIMARY KEY (`codins`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Dump dei dati della tabella iscritticorsi.corso: ~14 rows (circa)
+-- Dump dei dati della tabella iscritticorsi_lab5.corso: ~14 rows (circa)
 DELETE FROM `corso`;
 /*!40000 ALTER TABLE `corso` DISABLE KEYS */;
 INSERT INTO `corso` (`codins`, `crediti`, `nome`, `pd`) VALUES
@@ -46,7 +46,7 @@ INSERT INTO `corso` (`codins`, `crediti`, `nome`, `pd`) VALUES
 /*!40000 ALTER TABLE `corso` ENABLE KEYS */;
 
 
--- Dump della struttura di tabella iscritticorsi.iscrizione
+-- Dump della struttura di tabella iscritticorsi_lab5.iscrizione
 CREATE TABLE IF NOT EXISTS `iscrizione` (
   `matricola` int(11) NOT NULL,
   `codins` varchar(50) NOT NULL,
@@ -56,7 +56,7 @@ CREATE TABLE IF NOT EXISTS `iscrizione` (
   CONSTRAINT `FK_iscrizione_corso` FOREIGN KEY (`codins`) REFERENCES `corso` (`codins`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Dump dei dati della tabella iscritticorsi.iscrizione: ~3.120 rows (circa)
+-- Dump dei dati della tabella iscritticorsi_lab5.iscrizione: ~3.120 rows (circa)
 DELETE FROM `iscrizione`;
 /*!40000 ALTER TABLE `iscrizione` DISABLE KEYS */;
 INSERT INTO `iscrizione` (`matricola`, `codins`) VALUES
@@ -3129,7 +3129,7 @@ INSERT INTO `iscrizione` (`matricola`, `codins`) VALUES
 /*!40000 ALTER TABLE `iscrizione` ENABLE KEYS */;
 
 
--- Dump della struttura di tabella iscritticorsi.studente
+-- Dump della struttura di tabella iscritticorsi_lab5.studente
 CREATE TABLE IF NOT EXISTS `studente` (
   `matricola` int(11) NOT NULL,
   `cognome` varchar(50) NOT NULL,
@@ -3138,7 +3138,7 @@ CREATE TABLE IF NOT EXISTS `studente` (
   PRIMARY KEY (`matricola`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Dump dei dati della tabella iscritticorsi.studente: ~598 rows (circa)
+-- Dump dei dati della tabella iscritticorsi_lab5.studente: ~598 rows (circa)
 DELETE FROM `studente`;
 /*!40000 ALTER TABLE `studente` DISABLE KEYS */;
 INSERT INTO `studente` (`matricola`, `cognome`, `nome`, `CDS`) VALUES
